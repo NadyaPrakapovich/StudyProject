@@ -1,0 +1,12 @@
+        -- Common --
+-- Remove non-project files from repository
+-- Use CTRL+ALT+L
+
+        -- Task 1 --
+-- Rewrite class lesson5.Task1_Birds.Birds using object oriented programming principles
+
+        -- Task 2 --
+-- Rename all by java code convention
+
+        -- Task 3 --
+-- Task 3 was for using static classes. I have not see static classes
