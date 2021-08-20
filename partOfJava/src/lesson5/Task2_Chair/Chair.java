@@ -3,37 +3,37 @@ package lesson5.Task2_Chair;
 import java.lang.System;
 
 public class Chair {
-    String colour;
-    boolean softness;
-    int height;
-    int wight;
+	public String colour;
+	public boolean softness;
+	public int height;
+	public int wight;
 
-    public Chair(String colour, boolean softness) {
-        this.colour=colour;
-        this.softness=softness;
-    }
+	public Chair(String colour, boolean softness) {
+		this.colour = colour;
+		this.softness = softness;
+	}
 
 
-    public class legs {
-        String materialLegs;
+	public class legs {
+		public String materialLegs;
 
-        public legs(String material) {
-            this.materialLegs = material;
-        }
-    }
+		public legs(String material) {
+			this.materialLegs = material;
+		}
+	}
 
-    public class back {
+	public class back {
 
-        public void moveBack() {
-        }
+		public void moveBack() {
+		}
 
-        public void moveForward() {
+		public void moveForward() {
 
-        }
-    }
+		}
+	}
 
-    public class seat {
-         String materialSeat;
+	public class seat {
+		String materialSeat;
 
-    }
+	}
 }
