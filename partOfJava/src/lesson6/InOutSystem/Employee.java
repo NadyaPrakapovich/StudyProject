@@ -9,7 +9,7 @@ public abstract class Employee extends Person {
 
 	private int countEmpl;
 	private static int count = 1;
-	Employee[] jurnal = new Employee[15];
+	protected Employee[] jurnal= new Employee[15];
 
 	public Employee(String name, String surname) {
 		super(name, surname);
@@ -45,7 +45,7 @@ public abstract class Employee extends Person {
 
 	// тут что-то не работает
 //	public void findInSystem(String name, String surname, String idCard) {
-//		for (int i = 0; i < jurnal.length ; i++) {
+//		for (int i = 1; i < 4 ; i++) {
 //			if ((jurnal[i].idCard == idCard) && (jurnal[i].name == name) && (jurnal[i].surname == surname)) {
 //
 //				jurnal[i].status = Status.IN_OFFICE;
