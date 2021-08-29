@@ -6,9 +6,8 @@ public class DevOps extends Employee implements Room123 {
 		super(name, surname);
 	}
 
-
 	@Override
-	public void openDoor() {
+	public void enterTheRoom() {
 		System.out.println("DevOps can come in...");
 	}
 }

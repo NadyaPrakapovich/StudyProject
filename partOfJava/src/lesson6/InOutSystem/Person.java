@@ -2,19 +2,19 @@ package lesson6.InOutSystem;
 
 public abstract class Person {
 	protected String name;
-	protected String surname;
+	protected String lastName;
 
 
 	public Person(String name, String surname) {
 		this.name = name;
-		this.surname = surname;
+		this.lastName = surname;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getLastName() {
+		return lastName;
 	}
 }
