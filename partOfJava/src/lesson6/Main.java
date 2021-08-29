@@ -1,28 +1,29 @@
 package lesson6;
 
-import lesson6.InOutSystem.DevOps;
-import lesson6.InOutSystem.Director;
-import lesson6.InOutSystem.ITDapartment;
-import lesson6.InOutSystem.Teamlead;
+import lesson6.InOutSystem.*;
+
 import java.lang.System;
 
 public class Main {
 	public static void main(String[] args) {
-		ITDapartment itDapartment = new ITDapartment("Vasya", "Ivanov");
-		itDapartment.register(itDapartment);
-		itDapartment.printEmployee();
+		Journal journal = new Journal();
 
-		DevOps devOps = new DevOps("Fedya", "Sidorov");
-		devOps.register(devOps);
-		devOps.printEmployee();
+		ITDapartment itDapartment = new ITDapartment("VasyaIt", "Ivanov");
+		journal.registration(itDapartment);
 
-		Director director = new Director("Ivan", "Petrov");
-		director.register(director);
-		director.printEmployee();
+		DevOps devOps = new DevOps("FedyaDev", "Sidorov");
+		journal.registration(devOps);
 
-		//devOps.findInSystem("Ivan", "Petrov", "65868d76-b6e0-4ec6-afc2-71297fc19413");
-		//devOps.openDoor();
+		Director director = new Director("IvanDir", "Petrov");
+		journal.registration(director);
+
+		Director director1=new Director("ffff","fff");
+		journal.registration(director1);
 
 
+		journal.chekIdCard(director.getIdCard());
+		journal.getAllEmployee();
+
+		//director.enterTheOffice(director);
 	}
 }
