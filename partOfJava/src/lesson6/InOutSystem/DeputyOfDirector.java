@@ -2,8 +2,8 @@ package lesson6.InOutSystem;
 
 public class DeputyOfDirector extends Employee implements Room123 {
 
-	public DeputyOfDirector(String name, String surname) {
-		super(name, surname);
+	public DeputyOfDirector(String name, String lastName) {
+		super(name, lastName);
 	}
 
 	@Override

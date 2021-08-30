@@ -8,10 +8,15 @@ public abstract class Employee extends Person {
 
 	private static int count = 1;
 
-	public Employee(String name, String surname) {
-		super(name, surname);
+	public Employee(String name, String lastName
+	) {
+		super(name, lastName);
 		countEmpl = count++;
-	}
+			}
+
+
+
+
 
 	public String getIdCard() {
 		return idCard;

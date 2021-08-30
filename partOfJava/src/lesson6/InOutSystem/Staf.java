@@ -2,8 +2,8 @@ package lesson6.InOutSystem;
 
 public class Staf extends Employee {
 
-	public Staf(String name, String surname) {
+	public Staf(String name, String lastName) {
 
-		super(name, surname);
+		super(name, lastName);
 	}
 }
