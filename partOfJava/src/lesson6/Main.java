@@ -31,6 +31,9 @@ public class Main {
 		//journal.chekIdCard(director.getIdCard());
 		journal.getAllEmployee();
 
+		Room<Employee> room=new Room<>();
+		room.enterTheRoom(director1);
+
 		//director.enterTheOffice(director);
 	}
 }
