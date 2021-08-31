@@ -1,5 +1,5 @@
 package lesson6.InOutSystem;
 
-public interface Room123 {
+public interface VIPRoom {
 	 void enterTheRoom();
 }

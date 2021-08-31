@@ -1,6 +1,6 @@
 package lesson6.InOutSystem;
 
-public class DeputyOfDirector extends Employee implements Room123 {
+public class DeputyOfDirector extends Employee implements VIPRoom {
 
 	public DeputyOfDirector(String name, String lastName) {
 		super(name, lastName);

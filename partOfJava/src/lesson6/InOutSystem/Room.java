@@ -1,14 +1,20 @@
 package lesson6.InOutSystem;
 
 public class Room<T> {
-    T[] employee;
+    T employee;
+    private static int countEmployeeTheRoom;
+    private static int count = 1;
 
-    public Room() {
+    public Room(T employee) {
+        this.employee = employee;
+        countEmployeeTheRoom = count++;
     }
 
-    public void enterTheRoom(Employee employee){
-        
-        System.out.println("Enter");
+    public int getcountEmployeeTheRoom() {
+        return countEmployeeTheRoom;
+    }
 
+    public void enterTheRoom() {
+        System.out.println("Employee is the room ...");
     }
 }
