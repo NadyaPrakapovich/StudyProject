@@ -11,15 +11,16 @@ public class Journal {
 
     public void registration(Employee... employee) {
         int nowCountEmpl = Employee.getCountEmployee();
-         index = getIndex()+1;
+         index = getIndex()+1; // TODO: 9/1/2021 For what here used method getIndex()? [Pavel.Chachotkin]
         for (int i = 0; i < employee.length; i++) {
             try {
                 ValidateCountEmploee.validate(nowCountEmpl, generalCountEmployee);
                 journal[index] = employee[i];
                 journal[index].idCard = new IdCard().createIdCard();
-                // System.out.println("ok");
+                // TODO: 9/1/2021 Must not be commented code in project [Pavel.Chachotkin]
+                // System.out.println("ok"); 
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace(); // TODO: 9/1/2021 Convert exception to user friendly message [Pavel.Chachotkin]
 
             }
             index++;
@@ -27,6 +28,7 @@ public class Journal {
 
     }
 
+    // TODO: 9/1/2021 If method has 'get' prefix it must be return something [Pavel.Chachotkin]
     public void getAllEmployee() {
         for (int i = 0; i < journal.length; i++) {
             if (journal[i] != null) {

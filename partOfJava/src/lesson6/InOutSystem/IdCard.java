@@ -1,5 +1,6 @@
 package lesson6.InOutSystem;
 
+// TODO: 9/1/2021 Use CTRL+ALT+L [Pavel.Chachotkin]
 import java.util.Random;
 import java.util.UUID;
 
@@ -15,6 +16,7 @@ public class IdCard {
 		return idCard;
 	}
 
+// TODO: 9/1/2021 Must not be commented code in project without reason in comment [Pavel.Chachotkin]
 //private final int[] number = new int[10];
 //	public int[] createId() {
 //		Random rnd = new Random();
