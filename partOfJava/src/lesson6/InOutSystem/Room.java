@@ -13,7 +13,7 @@ public class Room<T> {
     }
 
     // TODO: 9/1/2021 Fix method name by camelCase [Pavel.Chachotkin]
-    public int getcountEmployeeTheRoom() {
+    public int getCountEmployeeTheRoom() {
         return countEmployeeTheRoom;
     }
 

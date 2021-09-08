@@ -8,10 +8,10 @@ public class Main {
     public static void main(String[] args) {
         Journal journal = new Journal();
 
-        ITDapartment itDapartment = new ITDapartment("VasyaIt", "Ivanov");
-        ITDapartment itDapartment1 = new ITDapartment("VasyaIt1", "Ivanov1");
-        ITDapartment itDapartment2 = new ITDapartment("VasyaIt2", "Ivanov2");
-        journal.registration(itDapartment, itDapartment1, itDapartment2);
+        ITDеpartment itDepartment = new ITDеpartment("VasyaIt", "Ivanov");
+        ITDеpartment itDepartment1 = new ITDеpartment("VasyaIt1", "Ivanov1");
+        ITDеpartment itDepartment2 = new ITDеpartment("VasyaIt2", "Ivanov2");
+        journal.registration(itDepartment, itDepartment1, itDepartment2);
 
         DevOps devOps = new DevOps("FedyaDev", "Sidorov");
         DevOps devOps1 = new DevOps("FedyaDev1", "Sidorov1");
@@ -26,14 +26,14 @@ public class Main {
 
         Director director5 = new Director("ffff", "fff");
         journal.registration(director5);
-        journal.getAllEmployee();
+        journal.printAllEmployee();
 
-        Room<ITDapartment> room = new Room<>(itDapartment2);
+        Room<ITDеpartment> room = new Room<>(itDepartment2);
         room.enterTheRoom();
         Room<Director> room1 = new Room<>(director5);
         room1.enterTheRoom();
         Room<DevOps> room3 = new Room<>(devOps);
         room1.enterTheRoom();
-        System.out.println(room.getcountEmployeeTheRoom());
+        System.out.println(room.getCountEmployeeTheRoom());
     }
 }

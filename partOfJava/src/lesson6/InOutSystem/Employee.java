@@ -26,14 +26,7 @@ public abstract class Employee extends Person {
 	}
 
 // TODO: 9/1/2021 Must not be commented code in project without reason in comment [Pavel.Chachotkin]
-//	public void enterTheOffice(Employee employee) {
-//		//boolean res=new Journal().findIdCardInSystem(employee.idCard);
-//		Journal journal = new Journal();
-//		journal.findIdCardInSystem(employee.idCard);
-//
-//
-//		//System.out.println(res);
-//	}
+
 }
 
 

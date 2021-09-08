@@ -17,8 +17,6 @@ public class Journal {
                 ValidateCountEmploee.validate(nowCountEmpl, generalCountEmployee);
                 journal[index] = employee[i];
                 journal[index].idCard = new IdCard().createIdCard();
-                // TODO: 9/1/2021 Must not be commented code in project [Pavel.Chachotkin]
-                // System.out.println("ok"); 
             } catch (Exception e) {
                 e.printStackTrace(); // TODO: 9/1/2021 Convert exception to user friendly message [Pavel.Chachotkin]
 
@@ -29,7 +27,7 @@ public class Journal {
     }
 
     // TODO: 9/1/2021 If method has 'get' prefix it must be return something [Pavel.Chachotkin]
-    public void getAllEmployee() {
+    public void printAllEmployee() {
         for (int i = 0; i < journal.length; i++) {
             if (journal[i] != null) {
                 System.out.print(journal[i].name + ", ");
@@ -44,7 +42,6 @@ public class Journal {
         for (int i = 0; i < journal.length; i++) {
             if (journal[i] != null && journal[i].idCard.equals(idCard)) {
                 return journal[i];
-                //	System.out.println(journal[i].name);
             }
         }
         return null;
