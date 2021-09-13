@@ -1,9 +1,8 @@
 package lesson6.InOutSystem;
 
-// TODO: 9/1/2021 Fix class name [Pavel.Chachotkin]
 public class ITDеpartment extends Employee {
 
-	public ITDеpartment(String name, String lastName) {
-		super(name, lastName);
-	}
+    public ITDеpartment(String name, String lastName) {
+        super(name, lastName);
+    }
 }

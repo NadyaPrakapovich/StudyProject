@@ -12,7 +12,6 @@ public class Room<T> {
         countEmployeeTheRoom = count++;
     }
 
-    // TODO: 9/1/2021 Fix method name by camelCase [Pavel.Chachotkin]
     public int getCountEmployeeTheRoom() {
         return countEmployeeTheRoom;
     }
