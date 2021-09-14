@@ -1,31 +1,27 @@
 package Lesson13.Play;
 
-import static java.lang.Thread.*;
+import static java.lang.Thread.sleep;
 
 public class Player implements Runnable {
-	PlayingField playingField;
-	int countCard = 0;
+    PlayingField playingField;
+    int countCard = 10;
+    int currentCountCard = countCard;
 
-	public Player(PlayingField playingField) {
-		this.playingField = playingField;
-	}
+    public Player(PlayingField playingField) {
+        this.playingField = playingField;
+    }
 
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            playingField.put();
 
-	public Player() {
+//            try {
+//                sleep(100);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+        }
 
-	}
-
-	public void run() {
-		try {
-			while (countCard < 30) {
-				countCard = countCard + playingField.get();
-				System.out.println(currentThread().getName()+countCard);
-				sleep(1000);
-			}
-		} catch (InterruptedException e) {
-			System.out.println("player card left");
-		}
-	}
-
-
+    }
 }
+

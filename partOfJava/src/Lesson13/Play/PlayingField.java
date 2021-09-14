@@ -1,25 +1,40 @@
 package Lesson13.Play;
 
 public class PlayingField {
-	final int N = 30;
-	int nowCountCard = 0;
+    final int allCountCard = 10;
+    int nowCountCard = 0;
 
-synchronized boolean put(){
-	if (nowCountCard<=N){
-		nowCountCard++;
-		System.out.println("card add on field");
-		return true;
-	}
-	return false;
-}
+    public synchronized int put() {
+        if (nowCountCard <= allCountCard) {
+            while (nowCountCard > 2) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                }
+            }
+            nowCountCard++;
+            System.out.println("player put 1 card ");
+            System.out.println("player has " + (allCountCard - nowCountCard));
+            return 1;
+            }
+            return 0;
+        }
 
-	synchronized int get(){
-		if (nowCountCard >0) {
-			nowCountCard--;
-			System.out.println("Card on field "+nowCountCard);
-			return 1;
 
-		}
-		return 0;
-	}
+    public synchronized void get() {
+        while (nowCountCard < 1) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+            }
+        }
+        //if (nowCountCard > 0) {
+        nowCountCard--;
+        System.out.println("Leader get card " + nowCountCard);
+        System.out.println("Lost card" + (allCountCard - nowCountCard));
+        notify();
+        //return 1;
+    }
+    //	return 0;
+
 }

@@ -1,7 +1,10 @@
 package Lesson13.Play;
 
-public class Leading extends Thread {
+import static java.lang.Thread.sleep;
+
+public class Leading implements Runnable {
 	PlayingField playingField;
+	final int allCountCard= 20;
 	int countCard = 0;
 
 	public Leading(PlayingField playingField) {
@@ -9,14 +12,14 @@ public class Leading extends Thread {
 	}
 
 	public void run() {
-		try {
-			while (countCard < 30) {
-				countCard = countCard + playingField.get();
-				System.out.println("leading has card"+countCard);
+		for (int i = 0; i < 10; i++) {
+			playingField.get();
+
+			try {
 				sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		} catch (InterruptedException e) {
-			System.out.println("Count card left");
 		}
 	}
 }
