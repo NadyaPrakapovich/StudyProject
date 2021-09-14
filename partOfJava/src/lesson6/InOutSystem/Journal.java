@@ -11,32 +11,31 @@ public class Journal {
     }
 
     public static int getIndex() {
-        return index=0;
+        return index;
     }
 
     public void registration(Employee... employee) {
         int nowCountEmpl = Employee.getCountEmployee();
-        //   index = getIndex() + 1; // TODO: 9/1/2021 For what here used method getIndex()? [Pavel.Chachotkin]
         try {
             for (int i = 0; i < employee.length; i++) {
 
                 ValidateCountEmploee.validate(nowCountEmpl, generalCountEmployee);
                 journal[index] = employee[i];
-                journal[index].idCard = new IdCard().createIdCard();
+                journal[index].generationIdCard();
                 index++;
             }
-            } catch (Exception e) {
-                e.printStackTrace(); // TODO: 9/1/2021 Convert exception to user friendly message [Pavel.Chachotkin]
-            }
-
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
+
 
     public void printAllEmployee() {
         for (int i = 0; i < journal.length; i++) {
             if (journal[i] != null) {
                 System.out.print(journal[i].name + ", ");
                 System.out.print(journal[i].lastName + ", ");
-                System.out.print(journal[i].idCard + ", ");
+                System.out.print(journal[i].idCard.getIdCard() + ", ");
                 System.out.println(journal[i].status);
             }
         }
@@ -44,7 +43,7 @@ public class Journal {
 
     public Employee findIdCardInSystem(String idCard) {
         for (int i = 0; i < journal.length; i++) {
-            if (journal[i] != null && journal[i].idCard.equals(idCard)) {
+            if (journal[i] != null && journal[i].idCard != null && journal[i].idCard.getIdCard().equals(idCard)) {
                 return journal[i];
             }
         }
@@ -60,17 +59,20 @@ public class Journal {
     }
 
     public void chekIdCard(Employee empl) {
-        Employee employee = findIdCardInSystem(empl.idCard);
-        for (int i = 0; i < journal.length; i++) {
-            if (journal[i] != null) {
-                if (employee != null) {
-                    if (journal[i].idCard.equals(empl.idCard)) {
-                        if (journal[i].name == employee.name && journal[i].lastName == employee.lastName) {
-                            journal[i].status = Status.IN_OFFICE;
+        if (empl.idCard != null) {
+            Employee employee = findIdCardInSystem(empl.idCard.getIdCard());
+            for (int i = 0; i < journal.length; i++) {
+                if (journal[i] != null) {
+                    if (employee != null) {
+                        if (journal[i].idCard.getIdCard().equals(empl.idCard.getIdCard())) {
+                            if (journal[i].name == employee.name && journal[i].lastName == employee.lastName) {
+                                journal[i].status = Status.IN_OFFICE;
+                            }
                         }
-                    }
-                } else findEmployeeByName(empl.name, empl.lastName);
+                    } else findEmployeeByName(empl.name, empl.lastName);
+                }
             }
         }
     }
 }
+

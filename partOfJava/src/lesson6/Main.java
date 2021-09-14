@@ -6,7 +6,7 @@ import java.lang.System;
 
 public class Main {
     public static void main(String[] args) {
-        Journal journal = new Journal(9);
+        Journal journal = new Journal(6);
 
         ITDеpartment itDepartment = new ITDеpartment("VasyaIt", "Ivanov");
         ITDеpartment itDepartment1 = new ITDеpartment("VasyaIt1", "Ivanov1");
@@ -30,15 +30,15 @@ public class Main {
 
         Director director5 = new Director("ffff", "fff");
         journal.registration(director5);
-        journal.chekIdCard(director2);
+        journal.chekIdCard(director5);
         journal.printAllEmployee();
-//
-//        Room<ITDеpartment> room = new Room<>(itDepartment2);
-//        room.enterTheRoom();
-//        Room<Director> room1 = new Room<>(director5);
-//        room1.enterTheRoom();
-//        Room<DevOps> room3 = new Room<>(devOps);
-//        room1.enterTheRoom();
-//        System.out.println(room.getCountEmployeeTheRoom());
+
+        Room<ITDеpartment> room = new Room<>(itDepartment2);
+        room.enterTheRoom();
+        Room<Director> room1 = new Room<>(director5);
+        room1.enterTheRoom();
+        Room<DevOps> room3 = new Room<>(devOps);
+        room1.enterTheRoom();
+        System.out.println(room.getCountEmployeeTheRoom());
     }
 }
