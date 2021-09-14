@@ -14,6 +14,7 @@ public class Journal {
         return index;
     }
 
+    // TODO: 9/14/2021 What will be if I'll call this method without arguments [Pavel.Chachotkin]
     public void registration(Employee... employee) {
         int nowCountEmpl = Employee.getCountEmployee();
         try {
