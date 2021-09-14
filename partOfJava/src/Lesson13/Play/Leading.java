@@ -4,7 +4,7 @@ import static java.lang.Thread.sleep;
 
 public class Leading implements Runnable {
 	PlayingField playingField;
-	final int allCountCard= 20;
+	final int allCountCard = 10;
 	int countCard = 0;
 
 	public Leading(PlayingField playingField) {
