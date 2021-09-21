@@ -1,6 +1,6 @@
-package lesson6.InOutSystem;
-import lesson6.InOutSystem.Manager;
-import lesson6.InOutSystem.VIPRoom;
+package lesson6.InOutSystem.Person.Employee.Manager;
+
+import lesson6.InOutSystem.Person.Employee.Office.VIPRoom;
 
 public class DeputyOfDirector extends Manager implements VIPRoom {
 

@@ -1,6 +1,4 @@
-package lesson6.InOutSystem;
-
-import lesson6.InOutSystem.Manager;
+package lesson6.InOutSystem.Person.Employee.Manager;
 
 public class Accountant extends Manager {
     public Accountant(String name, String lastName) {

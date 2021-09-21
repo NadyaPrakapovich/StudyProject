@@ -1,4 +1,4 @@
-package lesson6.InOutSystem;
+package lesson6.InOutSystem.Person.Employee;
 
 public class ValidateCountEmploee {
 	public static void validate(int nowCountEmpl, int maxCountEmployee) throws CountEmployeeException {

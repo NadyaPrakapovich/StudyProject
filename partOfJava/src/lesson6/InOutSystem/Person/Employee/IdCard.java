@@ -1,4 +1,4 @@
-package lesson6.InOutSystem;
+package lesson6.InOutSystem.Person.Employee;
 
 import java.util.UUID;
 
