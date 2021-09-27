@@ -26,7 +26,7 @@ public class Journal {
 
 				ValidateCountEmploee.validate(currentCountEmployee + 1, maxCountEmployee);
 				employeeList.add(employee);
-				employeeList.get(currentCountEmployee).status = IN_OFFICE;
+				//employeeList.get(currentCountEmployee).status = IN_OFFICE;
 				employeeList.get(currentCountEmployee).generationIdCard();
 				currentCountEmployee++;
 			} catch (CountEmployeeException e) {
@@ -44,7 +44,7 @@ public class Journal {
 
 					ValidateCountEmploee.validate(currentCountEmployee + 1, maxCountEmployee);
 					employeeList.add(employees.get(i));
-					employeeList.get(currentCountEmployee).status = IN_OFFICE;
+					//employeeList.get(currentCountEmployee).status = IN_OFFICE;
 					employeeList.get(currentCountEmployee).generationIdCard();
 					currentCountEmployee++;
 				} catch (CountEmployeeException e) {
@@ -59,8 +59,8 @@ public class Journal {
 		for (Employee employee : employeeList) {
 			System.out.print(employee.name + " ");
 			System.out.print(employee.lastName + " ");
-			System.out.print(employee.idCard.getIdCard() + " ");
-			System.out.println(employee.status);
+			//System.out.print(employee.idCard.getIdCard() + " ");
+			//System.out.println(employee.status);
 		}
 	}
 
