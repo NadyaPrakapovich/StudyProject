@@ -1,27 +1,29 @@
 package Lesson16;
 
 public class Phone {
-		private String name;
-		private int price;
+    private String name;
+    private Price price;
 
-		public Phone(String name, int price) {
-			this.name = name;
-			this.price = price;
-		}
+    public Phone(String name, Price price) {
+        this.name = name;
+        this.price=price;
+    }
 
-		public String getName() {
-			return name;
-		}
+    public String getName() {
 
-		public void setName(String name) {
-			this.name = name;
-		}
+        return name;
+    }
 
-		public int getPrice() {
-			return price;
-		}
+    public void setName(String name){
+    this.name = name;
+    }
 
-		public void setPrice(int price) {
-			this.price = price;
-		}
+    public Price getPrice(){
+        return price;
+    }
+
+
+
+
+
 }
