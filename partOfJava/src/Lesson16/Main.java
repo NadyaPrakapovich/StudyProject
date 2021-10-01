@@ -63,7 +63,7 @@ public class Main {
         ArrayList<Price> priceArrayList;
 
         priceArrayList=  phoneArrayList.stream().sorted(Comparator.comparing(Phone::getName))
-                .collect(()->new ArrayList<Price>(),(list, p)->list.add(p.getPrice()),(list1,list2)->list1.addAll(list2));
+                .collect(ArrayList::new,(list, p)->list.add(p.getPrice()), ArrayList::addAll);
 
         return priceArrayList;
     }
