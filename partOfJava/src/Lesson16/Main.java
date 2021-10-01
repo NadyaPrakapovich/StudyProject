@@ -3,6 +3,7 @@ package Lesson16;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -31,8 +32,10 @@ public class Main {
         arrayList2.add(new Phone("A", (new Price(150))));
 
 
-        getPrice(arrayList2);
-
+       ArrayList<Price> priceArrayList= getPrice(arrayList2);
+        for ( Price  p: priceArrayList) {
+            System.out.println(p.getValue());
+        }
     }
 
 
@@ -55,13 +58,13 @@ public class Main {
         return str;
     }
 
-    // method not return ArrayList<Price>
     public static ArrayList<Price> getPrice(ArrayList<Phone> phoneArrayList) {
 
-        ArrayList<Price> priceArrayList = new ArrayList<>();
+        ArrayList<Price> priceArrayList;
 
-        phoneArrayList.stream().sorted(Comparator.comparing(Phone::getName)).forEach(phone -> System.out.println(phone.getPrice().getValue()));
-        
+        priceArrayList=  phoneArrayList.stream().sorted(Comparator.comparing(Phone::getName))
+                .collect(()->new ArrayList<Price>(),(list, p)->list.add(p.getPrice()),(list1,list2)->list1.addAll(list2));
+
         return priceArrayList;
     }
 
