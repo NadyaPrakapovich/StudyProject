@@ -26,11 +26,20 @@ public class Main {
 
 		journal.registration(itDеpartments);
 
-        DevOps devOps = new DevOps("FedyaDev", "Sidorov");
-        journal.registration(devOps);
-        journal.enterTheOffice(devOps);
+		DevOps devOps = new DevOps("FedyaDev", "Sidorov");
+		journal.registration(devOps);
+		journal.enterTheOffice(devOps);
 
 		journal.printAllEmployeee();
+
+		journal.leaveTheOffice(itDepartment);
+		journal.printAllEmployeee();
+
+		Journal journal1 = new Journal(5);
+		journal1.registration(itDepartment);
+		journal1.enterTheOffice(itDepartment);
+		journal1.leaveTheOffice(itDepartment);
+		journal1.printAllEmployeee();
 
 
 //        Room<ITDеpartment> room = new Room<>(itDepartment2);

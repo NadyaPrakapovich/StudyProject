@@ -17,9 +17,7 @@ public class Journal {
 	}
 
 	public void registration(Employee employee) {
-		if (journalEmployeeList.contains(employee)) {
-			System.out.println("This employee " + employee.lastName + " " + employee.name + " already is in system");
-		} else {
+		if (!journalEmployeeList.contains(employee)) {
 			try {
 				ValidateCountEmploee.validate(currentCountEmployee, 1, maxCountEmployee);
 				journalEmployeeList.add(employee);
@@ -29,6 +27,8 @@ public class Journal {
 			} catch (CountEmployeeException e) {
 				System.out.println(e.getMessage());
 			}
+		} else {
+			System.out.println("This employee " + employee.lastName + " " + employee.name + " already is in system");
 		}
 	}
 
@@ -59,6 +59,13 @@ public class Journal {
 		}
 	}
 
+	public void leaveTheOffice(Employee employee) {
+		for (Employee empl : journalEmployeeList) {
+			if (empl.getIdCard().getIdCard().equals(employee.getIdCard().getIdCard())) {
+				empl.setStatus(Status.OUT_OFFICE);
+			}
+		}
+	}
 
 	public void printAllEmployeee() {
 		System.out.println("Journal all employees:");
