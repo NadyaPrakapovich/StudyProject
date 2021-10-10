@@ -1,4 +1,4 @@
-package lesson6.InOutSystem.Person.Employee;
+package lesson6.InOutSystem.Person.employee;
 
 public class ITDеpartment extends Employee {
 

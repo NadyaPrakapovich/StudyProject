@@ -1,6 +1,6 @@
-package lesson6.InOutSystem.Person.Employee.Manager;
+package lesson6.InOutSystem.Person.employee.manager;
 
-import lesson6.InOutSystem.Person.Employee.Office.VIPRoom;
+import lesson6.InOutSystem.Person.office.VIPRoom;
 
 public class Director extends Manager implements VIPRoom {
 	public Director(String name, String lastName) {

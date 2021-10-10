@@ -1,4 +1,4 @@
-package lesson6.InOutSystem.Person.Employee;
+package lesson6.InOutSystem.Person.system;
 
 public class CountEmployeeException extends  Exception{
 

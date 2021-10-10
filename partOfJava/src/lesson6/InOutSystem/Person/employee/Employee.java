@@ -1,5 +1,7 @@
-package lesson6.InOutSystem.Person.Employee;
+package lesson6.InOutSystem.Person.employee;
 
+import lesson6.InOutSystem.Person.system.IdCard;
+import lesson6.InOutSystem.Person.system.Status;
 import lesson6.InOutSystem.Person.Person;
 
 public abstract class Employee extends Person {
@@ -20,8 +22,17 @@ public abstract class Employee extends Person {
 		return idCard;
 	}
 
+	public void setIdCard(IdCard idCard) {
+		this.idCard = idCard;
+	}
+
 	public Status getStatus() {
 		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+
 	}
 
 	@Override

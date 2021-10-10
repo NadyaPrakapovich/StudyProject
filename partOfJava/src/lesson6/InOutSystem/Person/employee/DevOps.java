@@ -1,6 +1,6 @@
-package lesson6.InOutSystem.Person.Employee;
+package lesson6.InOutSystem.Person.employee;
 
-import lesson6.InOutSystem.Person.Employee.Office.VIPRoom;
+import lesson6.InOutSystem.Person.office.VIPRoom;
 
 public class DevOps extends Employee implements VIPRoom {
 

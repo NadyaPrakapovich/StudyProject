@@ -1,6 +1,6 @@
-package lesson6.InOutSystem.Person.Employee.Office;
+package lesson6.InOutSystem.Person.office;
 
-import lesson6.InOutSystem.Person.Employee.Employee;
+import lesson6.InOutSystem.Person.employee.Employee;
 
 public class Room<T extends Employee> {
     T[] employees;
