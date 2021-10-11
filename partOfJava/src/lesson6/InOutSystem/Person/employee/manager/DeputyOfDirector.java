@@ -9,7 +9,7 @@ public class DeputyOfDirector extends Manager implements VIPRoom {
 	}
 
 	@Override
-	public void enterTheRoom() {
+	public void enterTheVipRoom() {
 		System.out.println("Deputy of director can come in ...");
 	}
 }

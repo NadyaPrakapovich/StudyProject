@@ -8,7 +8,7 @@ public class Director extends Manager implements VIPRoom {
 	}
 
 	@Override
-	public void enterTheRoom() {
+	public void enterTheVipRoom() {
 		System.out.println("Director can come in ...");
 	}
 }

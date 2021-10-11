@@ -2,22 +2,22 @@ package lesson6.InOutSystem.Person.office;
 
 import lesson6.InOutSystem.Person.employee.Employee;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Room<T extends Employee> {
-    T[] employees;
-    private static int countEmployeeTheRoom;
+	ArrayList<T> listEmployeesInTheRoom = new ArrayList<>();
 
-      public Room(T[] employees) {
-        this.employees = employees;
-        countEmployeeTheRoom++;
-    }
+	public Room() {
 
-    public int getCountEmployeeTheRoom() {
-        return countEmployeeTheRoom;
-    }
+	}
 
-    public void enterTheRoom() {
+	public void enterTheRoom(Employee employee) {
+		listEmployeesInTheRoom.add((T) employee);
+	}
 
+	public ArrayList<T> getListEmployeeInTheRoom() {
+		return listEmployeesInTheRoom;
+	}
 
-        System.out.println("Employee is the room ...");
-    }
 }

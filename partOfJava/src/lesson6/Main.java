@@ -4,6 +4,9 @@ import lesson6.InOutSystem.Person.employee.DevOps;
 import lesson6.InOutSystem.Person.Journal;
 import lesson6.InOutSystem.Person.employee.Employee;
 import lesson6.InOutSystem.Person.employee.ITDеpartment;
+import lesson6.InOutSystem.Person.employee.manager.Director;
+import lesson6.InOutSystem.Person.employee.manager.Teamlead;
+import lesson6.InOutSystem.Person.office.Room;
 
 import java.util.ArrayList;
 
@@ -25,29 +28,40 @@ public class Main {
 		itDеpartments.add(new ITDеpartment("VasyaIt8", "Ivanov8"));
 
 		journal.registration(itDеpartments);
+		journal.enterTheOffice(itDеpartments.get(2));
 
-		DevOps devOps = new DevOps("FedyaDev", "Sidorov");
-		journal.registration(devOps);
-		journal.enterTheOffice(devOps);
+		ArrayList<Employee> devOpses = new ArrayList<>();
+		devOpses.add(new DevOps("Fedya1", "Sidorov"));
+		devOpses.add(new DevOps("Fedya2", "Sidorov"));
+		journal.registration(devOpses);
+		journal.enterTheOffice(devOpses.get(0));
 
 		journal.printAllEmployeee();
+		System.out.println();
 
-		journal.leaveTheOffice(itDepartment);
+		//journal.leaveTheOffice(itDepartment);
 		journal.printAllEmployeee();
 
+		System.out.println();
+		System.out.println("New journal");
 		Journal journal1 = new Journal(5);
-		journal1.registration(itDepartment);
-		journal1.enterTheOffice(itDepartment);
-		journal1.leaveTheOffice(itDepartment);
+		Teamlead teamlead = new Teamlead("Sonya", "Petrova");
+		journal1.registration(teamlead);
+		journal1.enterTheOffice(teamlead);
+		//journal1.leaveTheOffice(teamlead);
 		journal1.printAllEmployeee();
 
 
-//        Room<ITDеpartment> room = new Room<>(itDepartment2);
-//        room.enterTheRoom();
-//        Room<Director> room1 = new Room<>(director5);
-//        room1.enterTheRoom();
-//        Room<DevOps> room3 = new Room<>(devOps);
-//        room1.enterTheRoom();
-//        System.out.println(room.getCountEmployeeTheRoom());
+		System.out.println();
+		Room<Employee> room = new Room<>();
+		room.enterTheRoom(itDepartment);
+		room.enterTheRoom(teamlead);
+		ArrayList<Employee> employeeInTheRoom = room.getListEmployeeInTheRoom();
+		System.out.println("This employee is the room");
+		for (Employee emp : employeeInTheRoom) {
+			System.out.print(emp.getName() + " ");
+			System.out.println(emp.getLastName());
+		}
+
 	}
 }

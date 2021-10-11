@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class Journal {
 	private int maxCountEmployee;
 	private ArrayList<Employee> journalEmployeeList = new ArrayList<>();
-	private int currentCountEmployee = 0;
 
 	public Journal(int maxCountEmployee) {
 		this.maxCountEmployee = maxCountEmployee;
@@ -19,11 +18,11 @@ public class Journal {
 	public void registration(Employee employee) {
 		if (!journalEmployeeList.contains(employee)) {
 			try {
-				ValidateCountEmploee.validate(currentCountEmployee, 1, maxCountEmployee);
+				ValidateCountEmploee.validate(journalEmployeeList.size(), 1, maxCountEmployee);
 				journalEmployeeList.add(employee);
-				journalEmployeeList.get(currentCountEmployee).setStatus(Status.OUT_OFFICE);
-				journalEmployeeList.get(currentCountEmployee).generationIdCard();
-				currentCountEmployee++;
+				journalEmployeeList.get(journalEmployeeList.size() - 1).setStatus(Status.OUT_OFFICE);
+				journalEmployeeList.get(journalEmployeeList.size() - 1).generationIdCard();
+
 			} catch (CountEmployeeException e) {
 				System.out.println(e.getMessage());
 			}
@@ -68,7 +67,6 @@ public class Journal {
 	}
 
 	public void printAllEmployeee() {
-		System.out.println("Journal all employees:");
 		for (Employee employee : journalEmployeeList) {
 			System.out.print(employee.name + " ");
 			System.out.print(employee.lastName + " ");

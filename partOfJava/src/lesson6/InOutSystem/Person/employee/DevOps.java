@@ -9,7 +9,7 @@ public class DevOps extends Employee implements VIPRoom {
 	}
 
 	@Override
-	public void enterTheRoom() {
+	public void enterTheVipRoom() {
 		System.out.println("DevOps can come in...");
 	}
 }
