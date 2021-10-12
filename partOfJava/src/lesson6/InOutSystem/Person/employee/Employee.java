@@ -4,7 +4,9 @@ import lesson6.InOutSystem.Person.system.IdCard;
 import lesson6.InOutSystem.Person.system.Status;
 import lesson6.InOutSystem.Person.Person;
 
-public abstract class Employee extends Person {
+import java.io.Serializable;
+
+public abstract class Employee extends Person implements Serializable {
 
 	protected IdCard idCard;
 	protected Status status;
@@ -12,6 +14,9 @@ public abstract class Employee extends Person {
 	public Employee(String name, String lastName) {
 		super(name, lastName);
 		this.status = Status.OUT_OFFICE;
+	}
+
+	protected Employee() {
 	}
 
 	public void generationIdCard() {
@@ -42,8 +47,6 @@ public abstract class Employee extends Person {
 			return true;
 		}
 		return false;
-
-
 	}
 
 }

@@ -3,7 +3,7 @@ package lesson6.InOutSystem.Person.office;
 import lesson6.InOutSystem.Person.employee.Employee;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 
 public class Room<T extends Employee> {
 	ArrayList<T> listEmployeesInTheRoom = new ArrayList<>();

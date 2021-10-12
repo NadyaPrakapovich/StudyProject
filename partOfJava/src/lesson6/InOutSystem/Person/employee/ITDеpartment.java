@@ -1,8 +1,11 @@
 package lesson6.InOutSystem.Person.employee;
 
-public class ITDеpartment extends Employee {
+import java.io.Serializable;
 
-    public ITDеpartment(String name, String lastName) {
-        super(name, lastName);
-    }
+public class ITDеpartment extends Employee implements Serializable {
+
+	public ITDеpartment(String name, String lastName) {
+		super(name, lastName);
+	}
+
 }

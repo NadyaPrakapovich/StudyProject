@@ -1,6 +1,8 @@
 package lesson6.InOutSystem.Person.employee;
 
-public class Staf extends Employee {
+import java.io.Serializable;
+
+public class Staf extends Employee implements Serializable {
 
 	public Staf(String name, String lastName) {
 

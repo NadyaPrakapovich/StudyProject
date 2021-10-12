@@ -5,15 +5,19 @@ import lesson6.InOutSystem.Person.employee.Employee;
 import lesson6.InOutSystem.Person.system.ValidateCountEmploee;
 import lesson6.InOutSystem.Person.system.Status;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Journal {
+public class Journal implements Serializable {
 	private int maxCountEmployee;
 	private ArrayList<Employee> journalEmployeeList = new ArrayList<>();
 
 	public Journal(int maxCountEmployee) {
 		this.maxCountEmployee = maxCountEmployee;
 	}
+
+	public Journal(){}
+
 
 	public void registration(Employee employee) {
 		if (!journalEmployeeList.contains(employee)) {
@@ -66,7 +70,7 @@ public class Journal {
 		}
 	}
 
-	public void printAllEmployeee() {
+	public void printAllEmployee() {
 		for (Employee employee : journalEmployeeList) {
 			System.out.print(employee.name + " ");
 			System.out.print(employee.lastName + " ");

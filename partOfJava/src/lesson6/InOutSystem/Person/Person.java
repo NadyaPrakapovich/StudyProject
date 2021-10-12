@@ -1,6 +1,8 @@
 package lesson6.InOutSystem.Person;
 
-public abstract class Person {
+import java.io.Serializable;
+
+public abstract class Person implements Serializable {
 	protected String name;
 	protected String lastName;
 
@@ -10,11 +12,22 @@ public abstract class Person {
 		this.lastName = lastName;
 	}
 
+	protected Person() {
+	}
+
 	public String getName() {
 		return name;
 	}
 
+	public void setName(String name){
+		this.name=name;
+	}
+
 	public String getLastName() {
 		return lastName;
+	}
+
+	public void setLastName(String lastName){
+		this.lastName=lastName;
 	}
 }

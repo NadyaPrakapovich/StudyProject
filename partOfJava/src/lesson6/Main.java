@@ -8,6 +8,10 @@ import lesson6.InOutSystem.Person.employee.manager.Director;
 import lesson6.InOutSystem.Person.employee.manager.Teamlead;
 import lesson6.InOutSystem.Person.office.Room;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Main {
@@ -36,11 +40,14 @@ public class Main {
 		journal.registration(devOpses);
 		journal.enterTheOffice(devOpses.get(0));
 
-		journal.printAllEmployeee();
+		Director director=new Director("Jon","Petrov");
+		journal.registration(director);
+
+		journal.printAllEmployee();
 		System.out.println();
 
 		//journal.leaveTheOffice(itDepartment);
-		journal.printAllEmployeee();
+		//journal.printAllEmployeee();
 
 		System.out.println();
 		System.out.println("New journal");
@@ -49,7 +56,7 @@ public class Main {
 		journal1.registration(teamlead);
 		journal1.enterTheOffice(teamlead);
 		//journal1.leaveTheOffice(teamlead);
-		journal1.printAllEmployeee();
+		journal1.printAllEmployee();
 
 
 		System.out.println();
@@ -63,5 +70,26 @@ public class Main {
 			System.out.println(emp.getLastName());
 		}
 
+		System.out.println();
+		String fileName = "journal.dat";
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
+			oos.writeObject(journal);
+
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		Journal journalFromFile = new Journal(12);
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
+			journalFromFile = (Journal) ois.readObject();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		if (journalFromFile!=null){
+			journalFromFile.printAllEmployee();
+		}
+		else
+			System.out.println("Something went wrong ...");
 	}
 }
